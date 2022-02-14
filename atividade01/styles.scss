@@ -1,0 +1,229 @@
+// Colors
+    $white: #FFF;
+    $darkerBlue: #04395e;
+    $gray: #DADADA;
+    $green: #66BC45;
+    $blackText: #222;
+    $blackTitles: #333;
+    $formTitles: #444;
+
+// Font Scales
+    $titles: 3.8rem;
+    $text: 2.2rem;
+    $navTitles: 1.8rem;
+
+// Import Mixing
+@import 'flexbox';
+
+// Global Styles
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+html {
+    font-size: 62.5%;
+    height: 100%;
+}
+body {
+    width: 100%;
+    height: 100%;
+    font-family: Roboto, sans-serif;
+}
+header {
+    padding: 2rem 0rem;
+    background-color: $white;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+nav, figure {
+    @include flexbox;
+    @include align-items(#{center});
+}
+img {
+    width: 15rem;
+}
+ul {
+    list-style-type: none;
+    @include flexbox;
+    gap: 4.5rem;
+    li a {
+        font-size: $navTitles;
+        text-decoration: none;
+        color: $blackText;
+        position: relative;
+        &:after {
+            content: "";
+            position: absolute;
+            height: 2px;
+            width: 0;
+            left: 2px;
+            bottom: -5px;
+            background-color: #3FC7F4;
+            transition: 0.3s;
+        }
+        &:hover:after {
+            width: 100%;
+            height: 2px;
+        }
+    }
+}
+main {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+#aboutUs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: $green;
+    padding: 6rem 10rem;
+    gap: 6rem;
+    .aboutUsContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2rem;
+        .aboutUsTitle {
+            font-size: $titles;
+            color: $white;
+        }
+        .aboutUsText {
+            font-size: $text;
+            color: $white;
+        }
+        .aboutUsBold {
+            font-weight: bold;
+        }
+    }
+    .aboutUsPicture {
+        @include justify-content(#{center});
+        @include flexbox;
+        @include align-items(#{center});
+        img {
+            width: 100%;
+            height: 45rem;
+            box-shadow: 0px -1px 20px rgb(0 0 0 / 30%);
+            border-radius: 4px;
+        }
+    }
+}
+#clients {
+    background-color: $white;
+    width: 100%;
+    @include flexbox;
+    @include align-items(#{center});
+    @include flex-direction(#{column});
+    .clientesTitle {
+        padding-top: 4rem;
+        font-size: $titles;
+        color: $blackTitles;
+    }
+    .clientsContainer {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        justify-items: center;
+        padding-bottom: 4rem;
+    }
+    img {
+        width: 100%;
+    }
+}
+#contact {
+    background-color: $darkerBlue;
+    padding: 6rem 10rem;
+    .formContainer {
+        width: 100%;
+        height: 60rem;
+        background: $white;
+        border-radius: 1rem;
+        @include flexbox;
+        @include flex-direction(#{column});
+        @include align-items(#{center});
+        padding: 5rem;
+        gap: 4rem;
+        h1 {
+            color: $blackTitles;
+            font-size: $titles;
+        }
+        label {
+            color: $formTitles;
+            font-size: $navTitles;
+            @include flexbox;
+            @include flex-direction(#{column});
+        }
+        form {
+            @include flexbox;
+            @include flex-direction(#{column});
+            gap: 2rem;
+        }
+        fieldset {
+            border: none;
+            width: 100%;
+            @include flexbox;
+            @include flex-direction(#{column});
+            gap: 2rem;
+        }
+        input {
+            height: 5rem;
+            font-size: 1.6rem;
+            border: solid 1px $gray;
+            border-radius: 6px;
+            margin-top: 0.5rem;
+            padding-left: 1rem;
+            :focus {
+                outline: none;
+            }
+        }
+        textarea {
+            font-size: 1.6rem;
+            border: solid 1px $gray;
+            border-radius: 6px;
+            margin-top: 0.5rem;
+            padding: 1rem;
+            color: $formTitles;
+            font-family: Roboto, sans-serif;
+            :focus{
+                 outline: none;
+            }
+            resize: none;
+        }
+        button {
+            background: $darkerBlue;
+            font-size: $navTitles;
+            color: $white;
+            border: none;
+            border-radius: 6px;
+            height: 5rem;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+    }
+}
+footer {
+    height: 30rem;
+    background-color: $white;
+    @include flexbox;
+    @include justify-content(#{center});
+    gap: 60rem;
+    @include align-items(#{center});
+    padding: 0 10rem;
+    .footerInfos {
+        @include flexbox;
+        @include flex-direction(#{column});
+        @include align-items(#{center});
+        gap: 1rem;
+        a {
+            font-size: $text;
+            gap: 2rem;
+            margin-bottom: 1rem;
+            color: $blackTitles;
+            text-decoration: none;
+            position: relative;
+        }
+    }
+}

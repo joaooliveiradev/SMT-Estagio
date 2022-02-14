@@ -1,0 +1,43 @@
+$primaryColor: #069;
+
+@import 'mixing';
+
+@for $i from 1 through 5 {
+    .texto-#{$i}{
+        font-size: #{10 * $i}px;
+    }
+}
+
+h1, h2 {
+    @include shadow(#cc0);
+    color: $primaryColor;
+}
+h2 {
+    text-decoration: dashed;
+}
+.titulo {
+    @include shadow(#fc0);
+    color: $primaryColor;
+    font-size: 1.2em;
+}
+.texto {
+    @extend .titulo;
+    margin-top: 10px;
+}
+div {
+    border: 1px solid $primaryColor;
+}
+#header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    h1 {
+        font-size: 1.6em;
+    }
+    h2 {
+        font-size: 1.4em;
+    }
+    img.logo{
+        border: 2px solid #ccc;
+    }
+}

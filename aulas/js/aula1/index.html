@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function handleLink (){
+            document.getElementById('#link-principal').innerHTML = 'Go to the page';
+        }
+        document.title = 'Minha página';
+        function showPopup () {
+            const popups = document.getElementsByClassName("popup");
+            const firstPopups = popups[0];
+            firstPopups.style.display = "block";
+        }
+        document.onload = function(){
+            handleLink();
+        }
+    </script>
+    <style>
+        .popup {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <a href="#" id="link-principal" onclick="showPopup()">Vai pra página</a>
+    <div class="popup">
+        popup
+    </div>
+</body>
+</html>

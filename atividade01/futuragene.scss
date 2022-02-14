@@ -1,0 +1,42 @@
+@import 'styles';
+// Colors
+$lightGreen: #7D9248;
+$snow: snow;
+ul li a:after {
+    background-color: $lightGreen;
+}
+#aboutUs {
+    background-color: $blackTitles;
+    .aboutUsTitle {
+        text-shadow: 1px 1px black;
+    }
+    .aboutUsText {
+        text-shadow: 1px 1px black;
+    }
+    .aboutUsPicture  {
+        img {
+            width: 100%;
+            height: 45rem;
+            border-radius: 4px;
+            box-shadow: unset;
+        }
+        
+    }
+}
+#contact {
+    background-color: snow;
+    padding: 0;
+    .formContainer {
+        background-color: unset;
+        button {
+            background: $lightGreen;
+        }
+    }
+}
+footer {
+    height: unset;
+    padding: 2rem;
+    background-color: #ebeadf;
+}
+
+
